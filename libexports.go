@@ -1,4 +1,4 @@
-package exports
+package libexports
 
 import (
 	"fmt"
