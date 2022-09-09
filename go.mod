@@ -1,3 +1,3 @@
-module github.com/test-network-function/l2discovery/l2lib/pkg/exports
+module github.com/test-network-function/l2discovery-exports
 
 go 1.18
