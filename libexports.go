@@ -42,24 +42,22 @@ func (mac Mac) String() string {
 
 // Object representing a ptp interface within a cluster.
 type PtpIf struct {
-	// Mac address of the Ethernet interface
-	MacAddress string
 	// Index of the interface in the cluster (node/interface name)
 	IfClusterIndex
-	// PCI address
-	IfPci PCIAddress
+	// Interface
+	Iface
 }
 
 // Object used to index interfaces in a cluster
 type IfClusterIndex struct {
 	// interface name
-	IfName string
+	InterfaceName string
 	// node name
 	NodeName string
 }
 
 func (index IfClusterIndex) String() string {
-	return fmt.Sprintf("%s_%s", index.NodeName, index.IfName)
+	return fmt.Sprintf("%s_%s", index.NodeName, index.InterfaceName)
 }
 
 func (iface *PtpIf) String() string {
@@ -67,5 +65,5 @@ func (iface *PtpIf) String() string {
 }
 
 func (iface *PtpIf) String1() string {
-	return fmt.Sprintf("index:%s mac:%s", iface.IfClusterIndex, iface.MacAddress)
+	return fmt.Sprintf("index:%s mac:%s", iface.IfClusterIndex, iface.IfMac)
 }
