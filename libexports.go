@@ -10,7 +10,7 @@ type Mac struct {
 }
 
 type PCIAddress struct {
-	Device, Function, Description string
+	Device, Function, Description, Subsystem string
 }
 
 type PTPCaps struct {
