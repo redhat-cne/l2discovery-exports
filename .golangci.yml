@@ -19,9 +19,11 @@ linters-settings:
   gocyclo:
     min-complexity: 20
   mnd:
-    settings:
-      mnd:
-        checks: argument,case,condition,return
+    checks:
+      - argument
+      - case
+      - condition
+      - return
   govet:
     settings:
       printf:
@@ -33,7 +35,6 @@ linters-settings:
   lll:
     line-length: 250
   nolintlint:
-    allow-leading-space: false
     allow-unused: false
     require-explanation: false
     require-specific: true
@@ -47,7 +48,6 @@ linters:
     - dogsled
     - errcheck
     - exhaustive
-    - copyloopvar
     - funlen
     - goconst
     - gocritic
@@ -74,17 +74,14 @@ linters:
 
 issues:
   exclude-rules:
-    # Ignore magic numbers, inline strings and function length in tests
     - path: _test\.go
       linters:
         - mnd
         - goconst
         - funlen
-    # Ignore line length for string assignments
     - linters:
         - lll
       source: "^(.*= (\".*\"|`.*`))$"
-    # Ignore unnecessary defer warnings
     - linters:
         - gocritic
-      text: "unnecessaryDefer:" 
+      text: "unnecessaryDefer:"
