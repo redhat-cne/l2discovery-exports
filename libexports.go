@@ -91,7 +91,7 @@ func (iface *PtpIf) StringFull(indent int) string {
 	result.WriteString(fmt.Sprintf(childIndentStr+"  IfPTPCaps: %s\n", iface.IfPTPCaps))
 	result.WriteString(fmt.Sprintf(childIndentStr+"  IfUp: %t\n", iface.IfUp))
 	result.WriteString(fmt.Sprintf(childIndentStr+"  IfMaster: %s\n", iface.IfMaster))
-	result.WriteString(fmt.Sprintf(childIndentStr+"  IfSlaveType: %s\n", iface.IfSlaveType))
+	result.WriteString(fmt.Sprintf(childIndentStr+"  IfSlaveType: %s", iface.IfSlaveType))
 
 	return result.String()
 }
